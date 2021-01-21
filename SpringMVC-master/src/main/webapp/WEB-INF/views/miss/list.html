@@ -26,21 +26,28 @@
     <thead>
     <tr>
         <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>ID Card</th>
+        <th>Address</th>
+        <th>Home Town</th>
         <th>Nation</th>
         <th>Edit</th>
         <th>Delete</th>
-        <th>View</th>
 
     </tr>
     </thead>
     <tbody>
     <tr th:each="row,rowStat : ${listMiss}">
         <td th:text="${row.getName()}"></td>
-
+        <td th:text="${row.getAge()}"></td>
+        <td th:text="${row.getEmail()}"></td>
+        <td th:text="${row.getIdentcard()}"></td>
+        <td th:text="${row.getAddress()}"></td>
+        <td th:text="${row.getHometown()}"></td>
         <td th:text="${row.getNation().getName()}"></td>
         <td><a th:href="@{/miss/edit/{id}(id=${row.getId()})}">edit</a></td>
         <td><a th:href="@{/miss/delete/{id}(id=${row.getId()})}" onclick="return confirm('Ban co muon xoa khong?')">delete</a></td>
-        <td><a th:href="@{/miss/view/{id}(id=${row.getId()})}">view</a></td>
     </tr>
     </tbody>
 </table>

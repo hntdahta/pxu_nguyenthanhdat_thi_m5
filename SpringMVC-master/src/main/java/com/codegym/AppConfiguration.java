@@ -1,10 +1,6 @@
 package com.codegym;
 
 
-import com.codegym.service.CustomerService;
-import com.codegym.service.ProductService;
-import com.codegym.service.impl.CustomerServiceImpl;
-import com.codegym.service.impl.ProductServiceImpl;
 import org.springframework.beans.BeansException;
 
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -59,10 +55,6 @@ public class AppConfiguration implements ApplicationContextAware  {
         templateResolver.setTemplateMode(TemplateMode.HTML);
         return templateResolver;
     }
-    @Bean
-    public CustomerService customerService(){return new CustomerServiceImpl();}
-    @Bean
-    public ProductService productService(){return new ProductServiceImpl();}
     @Bean
     public TemplateEngine templateEngine(){
         TemplateEngine templateEngine = new SpringTemplateEngine();

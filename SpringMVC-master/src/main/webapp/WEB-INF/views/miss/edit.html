@@ -9,7 +9,7 @@
     </a>
 </p>
 <div id="form">
-    <form action="#" id="demoForm" th:action="@{/miss/view.html}" th:object="${Miss}"
+    <form action="#" id="demoForm" th:action="@{/miss/edit}" th:object="${Miss}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
@@ -24,7 +24,7 @@
 
         <div>
             <label>Email</label>
-            <input type="text" name="email" th:field="*{email}"/>
+            <input type="email" name="email" th:field="*{email}"/>
         </div>
 
         <div>
@@ -69,12 +69,13 @@
                 "name": {
                     required: true,
                     maxlength: 15,
-                    minlength: 8
-                }
-                "age": {
-                    required: true
-                }
+                    minlength: 8,
 
+                "age": {
+                    required: true,
+                    min: 1,
+                    max : 100
+                }
             }
         });
     });

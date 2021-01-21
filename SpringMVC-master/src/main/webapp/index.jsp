@@ -1,7 +1,5 @@
 <html>
 <body>
-<a th:href="@{/room/list.html}">
-Go to Miss List
-</a>
+<h1>/miss/list</h1>
 </body>
 </html>

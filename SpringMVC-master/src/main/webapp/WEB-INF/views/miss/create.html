@@ -25,7 +25,7 @@
 
         <div>
             <label>Email</label>
-            <input type="text"   name="email" th:field="*{email}"/>
+            <input type="email"   name="email" th:field="*{email}"/>
         </div>
 
         <div>
@@ -70,7 +70,11 @@
                     maxlength: 15,
                     minlength: 8
                 }
-
+                "age": {
+                    required: true,
+                    minValue :1,
+                    maxValue :100
+                }
 
             }
         });
