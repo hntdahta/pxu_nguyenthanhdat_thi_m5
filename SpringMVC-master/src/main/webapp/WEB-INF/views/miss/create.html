@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+<h3>Add Miss</h3>
+<p>
+    <a th:href="@{/miss/list.html}">
+        Back to Miss list
+    </a>
+</p>
+<h2 th:text="${success}"></h2>
+<div id="form">
+    <form action="#" id="demoForm" th:action="@{/miss/create}" th:object="${Miss}"
+          method="POST" >
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Name</label>
+            <input type="text"   name="name" th:field="*{name}"/>
+        </div>
+
+        <div>
+            <label>Age</label>
+            <input type="number"   name="age" th:field="*{age}"/>
+        </div>
+
+        <div>
+            <label>Email</label>
+            <input type="text"   name="email" th:field="*{email}"/>
+        </div>
+
+        <div>
+            <label>ID Card</label>
+            <input type="number"   name="identcard" th:field="*{identcard}"/>
+        </div>
+
+        <div>
+            <label>Address</label>
+            <input type="text"   name="address" th:field="*{address}"/>
+        </div>
+
+        <div>
+            <label>Home Town</label>
+            <input type="text"   name="hometown" th:field="*{hometown}"/>
+        </div>
+
+        <div>
+            <label>Nation</label>
+            <select name="nationId">
+                <th:block th:each="item : ${nation}">
+                    <option th:value="${item.getId()}" th:text="${item.getName()}"></option>
+                </th:block>
+            </select>
+        </div>
+
+
+        <input type="submit" value="Save"></input>
+    </form>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+<script>
+
+
+
+    $().ready(function() {
+        $("#demoForm").validate({
+
+            rules: {
+                "name": {
+                    required: true,
+                    maxlength: 15,
+                    minlength: 8
+                }
+
+
+            }
+        });
+    });
+</script>
+</body>
+</html>
