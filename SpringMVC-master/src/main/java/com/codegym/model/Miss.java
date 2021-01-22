@@ -10,7 +10,7 @@ public class Miss {
 
     private String name;
 
-    private String age;
+    private int age;
 
     private String email;
 
@@ -37,7 +37,7 @@ public class Miss {
     public Miss() {
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
@@ -45,7 +45,7 @@ public class Miss {
         return email;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
